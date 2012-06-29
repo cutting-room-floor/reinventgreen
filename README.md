@@ -13,11 +13,13 @@ There are over 200 cool roof buildings in New York City. This newly opened datas
 
 ## Street trees
 
+`/nyc-trees`
+
 A census of street trees by borough yielded datasets with a total of 623939 trees ([Source](https://nycopendata.socrata.com/browse?q=street%20tree%20census&sortBy=relevance)). This map contains all boroughs except Staten Island.
 
-{EMBED}
-
 ## Green streets
+
+`nyc-greenstreets`
 
 Small planted areas that are maintained as [Greenstreets](http://www.nycgovparks.org/trees) ([Source](https://nycopendata.socrata.com/Environmental-Sustainability/Greenstreets/p23h-ci72)).
 
