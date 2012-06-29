@@ -26,6 +26,8 @@ Small planted areas that are maintained as [Greenstreets](http://www.nycgovparks
 
 Rich dataset containing over one million building footprints of New York City. Here we've colored them by footprint area ([Source](https://nycopendata.socrata.com/Facilities-and-Structures/Building-Perimeter-Outlines/r7fd-yd5e)).
 
+NOTE: this is powered by a postgis data, since the data are so heavy. We can give db dumps tomorrow morning - just ping me at [@ian_villeda](https://twitter.com/ian_villeda)
+
 ## School zones
 
 Elementary and middle school zones of New York City ([Source](https://nycopendata.socrata.com/Education/School-Zones-2011-2012/dqkt-8x6u)).
