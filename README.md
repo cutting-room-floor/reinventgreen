@@ -24,10 +24,35 @@ Small planted areas that are maintained as [Greenstreets](http://www.nycgovparks
 
 ## Building perimeter outlines
 
+`/nyc-buildings`
+
 Rich dataset containing over one million building footprints of New York City. Here we've colored them by footprint area ([Source](https://nycopendata.socrata.com/Facilities-and-Structures/Building-Perimeter-Outlines/r7fd-yd5e)).
 
 NOTE: this is powered by a postgis data, since the data are so heavy. We can give db dumps tomorrow morning - just ping me at [@ian_villeda](https://twitter.com/ian_villeda)
 
 ## School zones
 
+`nyc-school-zones`
+
 Elementary and middle school zones of New York City ([Source](https://nycopendata.socrata.com/Education/School-Zones-2011-2012/dqkt-8x6u)).
+
+NOTE: This layer can generate both middle and elementary school zone maps. To toggle between them, just uncomment the layer you want to see, and comment out the layer you don't want to see, like this: 
+
+```carto
+/*
+#nycmiddleschoolzones {
+  line-color:darken(#00FF7F,20);
+  line-width:1;
+  polygon-opacity:.5;
+  polygon-fill:#00FF7F;
+}
+
+*/
+
+#nycelementaryschoolz {
+  line-color:darken(#007FFF,20);
+  line-width:1;
+  polygon-opacity:.5;
+  polygon-fill:#007FFF;
+}
+``` 
