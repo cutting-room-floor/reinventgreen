@@ -1,0 +1,59 @@
+{
+  "bounds": [
+    -74.2415,
+    40.5081,
+    -73.6853,
+    40.912
+  ],
+  "center": [
+    -73.9442,
+    40.6968,
+    11
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "greenstreets20120627",
+    "fields": [
+      "DESCRIPTIO",
+      "PARENTORG",
+      "LOCATION"
+    ],
+    "template_teaser": "<b>Name:</b> {{{DESCRIPTIO}}} <br />\n<b>Parent Organization:</b> {{{PARENTORG}}}  <br />\n<b>Location:</b> {{{LOCATION}}}   <br />"
+  },
+  "minzoom": 0,
+  "maxzoom": 17,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "id": "greenstreets20120627",
+      "class": "",
+      "Datasource": {
+        "file": "data/Greenstreets_20120627.shp",
+        "id": "greenstreets20120627",
+        "project": "nyc-data",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "greenstreets20120627"
+    }
+  ],
+  "name": "",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}
