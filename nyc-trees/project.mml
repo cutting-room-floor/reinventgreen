@@ -1,0 +1,61 @@
+{
+  "bounds": [
+    -74.225,
+    40.5399,
+    -73.6784,
+    40.9602
+  ],
+  "center": [
+    -73.927,
+    40.6994,
+    11
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "trees",
+    "template_teaser": "<b>Tree ID:</b>{{{TREEID}}} <br />\n<b>Address:</b> {{{BUILDINGNU}}} {{{BUILDINGST}}} <br />\n<b>Diambeter (DBH):</b> {{{DIAMETER}}} <br />\n<b>Borough:</b> {{{BOROUGH}}}",
+    "fields": [
+      "TREEID",
+      "BUILDINGNU",
+      "BUILDINGST",
+      "DIAMETER",
+      "BOROUGH"
+    ]
+  },
+  "minzoom": 0,
+  "maxzoom": 17,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "point",
+      "id": "trees",
+      "class": "",
+      "Datasource": {
+        "file": "data/trees.shp",
+        "id": "trees",
+        "project": "nyc-trees",
+        "srs": null
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "name": "trees"
+    }
+  ],
+  "name": "nyc-trees",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}
