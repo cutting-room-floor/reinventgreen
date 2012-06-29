@@ -1,9 +1,9 @@
 Reinvent Green Maps
 ===================
 
-TileMill projects for maps we have rendered out in prep for the Reinvent Green Hackathon June 30/July 1st in New York City.
+[TileMill](http://mapbox.com/tilemill/) projects for maps we have rendered out in prep for the Reinvent Green Hackathon June 30/July 1st in New York City.
 
-[Background here](http://mapbox.com/blog/reinvent-green).
+[For more background, head over to our blog](http://mapbox.com/blog/reinvent-green).
 
 ## Cool roof buildings
 
@@ -13,7 +13,7 @@ There are over 200 cool roof buildings in New York City. This newly opened datas
 
 ## Street trees
 
-Census of street trees by borough ([Source](https://nycopendata.socrata.com/browse?q=street%20tree%20census&sortBy=relevance)).
+A census of street trees by borough yielded datasets with a total of 623939 trees ([Source](https://nycopendata.socrata.com/browse?q=street%20tree%20census&sortBy=relevance)). This map contains all boroughs except Staten Island.
 
 {EMBED}
 
