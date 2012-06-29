@@ -31,20 +31,6 @@
     },
     {
       "geometry": "polygon",
-      "id": "nycmerc",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/ianvilleda/Downloads/NYC_Buildings/nyc_merc.shp",
-        "id": "nycmerc",
-        "project": "nyc-buildings",
-        "srs": null
-      },
-      "srs-name": "900913",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "name": "nycmerc"
-    },
-    {
-      "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
         "table": "buildings",
@@ -64,16 +50,6 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "buildings"
     },
-    {
-      "geometry": "point",
-      "id": "invasion",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/ianvilleda/Documents/invasion!.csv",
-        "id": "invasion",
-        "project": "nyc-buildings",
-        "srs": null
-      },
       "srs-name": "autodetect",
       "srs": "",
       "name": "invasion"
