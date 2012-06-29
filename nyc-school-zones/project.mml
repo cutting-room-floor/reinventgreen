@@ -1,0 +1,72 @@
+{
+  "bounds": [
+    -74.3266,
+    40.4887,
+    -73.6977,
+    40.9291
+  ],
+  "center": [
+    -73.9582,
+    40.6817,
+    11
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "nycmiddleschoolzones",
+    "template_teaser": "School district: {{{SCHOOLDIST}}}<br>\nSchool zone: {{{SCH_ZONE}}}",
+    "fields": [
+      "SCHOOLDIST",
+      "SCH_ZONE"
+    ]
+  },
+  "minzoom": 0,
+  "maxzoom": 17,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "id": "nycelementaryschoolz",
+      "class": "",
+      "Datasource": {
+        "file": "data/NYC_ElementarySchool_Zones_2011_2012A.shp",
+        "id": "nycelementaryschoolz",
+        "project": "nyc-demo-by-zip",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "nycelementaryschoolz"
+    },
+    {
+      "geometry": "polygon",
+      "id": "nycmiddleschoolzones",
+      "class": "",
+      "Datasource": {
+        "file": "data/NYC_MiddleSchool_Zones_2011_2012A.shp",
+        "id": "nycmiddleschoolzones",
+        "project": "nyc-demo-by-zip",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "nycmiddleschoolzones"
+    }
+  ],
+  "name": "Middle School Zones",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}
