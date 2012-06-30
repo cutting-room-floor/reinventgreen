@@ -1,7 +1,7 @@
 $(function() {
     var layers = [
+        'villeda.map-ytpcaaur',
         'lxbarth.map-s26z9vnz',
-        'villeda.nyc-trees',
         'villeda.map-8lrdm572',
         'villeda.nyc-buildings',
         'villeda.map-knrpf5da',
