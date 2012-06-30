@@ -27,7 +27,7 @@ $(function() {
         new wax.mm.connector(tilejson));
         map.setCenterZoom(new MM.Location(40.7010,
             -74.0137),
-            11);
+            12);
         wax.mm.zoomer(map).appendTo(map.parent);
 
         // Interaction

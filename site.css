@@ -44,23 +44,30 @@ table { border-collapse: collapse; border-spacing: 0; }
 --------------------------------------------------------- */
 
 body {
+  background-color: #111;
   font-size: 15px;
   font-family: Helvetica, Arial, sans-serif;
-  color: #333;
+  color: #aaa;
 }
 
 h1 {
   font-size: 25px;
   padding: 10px 0;
-  font-weight: bold;
-}
+  letter-spacing: -.05em;
+  color: #999;
+  margin-bottom: 5px;
+  }
+  h1 .green-data {
+    color: #f5f5f5;
+    }
 
 p {
   padding: 0 0 10px 0;
   }
 
 a {
-  color: #489;
+  color: #f5f5f5;
+  text-decoration: none;
   }
 
 /* --------------------------------------------------------
@@ -71,39 +78,33 @@ a {
   position:fixed !important;
   width:auto !important;
   height:auto !important;
-  top:90px;
+  top:100px;
   left:300px;
   right:0;
   bottom:0;
-  background-color: #000;
-  }
+  box-shadow:rgba(100, 100, 100, 0.1) -1px -1px 3px;
+  -moz-box-shadow:rgba(100, 100, 100, 0.1) -1px -1px 3px;
+  -webkit-box-shadow:rgba(100, 100, 100, 0.1) -1px -1px 3px;
+}
 
 #header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 69px;
-  border-bottom: 1px solid #ccc;
-  background-color: rgba(255, 255, 255, 0.9);
+  height: 80px;
   padding: 10px 20px;
   z-index: 2;
-  box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
-  -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
-  -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   }
 
 #sidebar {
   position: absolute;
-  width: 260px;
-  padding: 20px;
-  top: 90px;
+  width: 280px;
+  padding-left: 20px;
+  top: 100px;
   left: 0;
   bottom: 0;
   z-index: 1;
-  box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
-  -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
-  -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   }
 
 #attribution {
@@ -116,19 +117,37 @@ a {
 /* --------------------------------------------------------
   Layer switcher
 --------------------------------------------------------- */
-
+#layer-switcher li {
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  margin-bottom: -1px;
+}
 #layer-switcher li a.title {
   font-size: 15px;
   font-weight: bold;
-  padding: 5px 0;
+  padding: 10px 0;
   display: block;
+  text-decoration: none;
+  color: #f5f5f5;
   }
 #layer-switcher li .description {
   display: none;
+  color: #aaa;
+  padding: 10px 0;
   }
 #layer-switcher li.active .description {
   display: block;
   }
+#layer-switcher li.active {
+  background-color: #222;
+  border-left: 1px solid #666;
+  padding-left: 10px;
+  margin-left: -10px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
 
 /* --------------------------------------------------------
   Wax, largely taken from theme/controls.css
