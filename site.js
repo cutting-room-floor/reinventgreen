@@ -49,8 +49,13 @@ $(function() {
 
         // Return handler for updating the map.
         return function(tilejson) {
+            if (map.layers.length > 1) return;
             interaction && interaction.remove();
-            map.setLayerAt(0, new wax.mm.connector(tilejson));
+            $(map.layers[0].parent).css('z-index', 100);
+            map.insertLayerAt(1, new wax.mm.connector(tilejson));
+            $(map.layers[0].parent).fadeOut(500, function() {
+                map.removeLayerAt(0);
+            });
             interaction = wax.mm
                 .interaction()
                 .map(map)
