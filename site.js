@@ -1,12 +1,4 @@
 $(function() {
-    var map;
-    var layerTemplate = $('#layer-switcher ul').html();
-    $('#layer-switcher ul').empty();
-
-    var tileUrl = function(layer) {
-        return 'http://a.tiles.mapbox.com/v3/' + layer + '.jsonp'
-    };
-
     var layers = [
         'lxbarth.map-s26z9vnz',
         'villeda.nyc-trees',
@@ -15,6 +7,13 @@ $(function() {
         'villeda.map-knrpf5da',
         'villeda.map-iaqy28df'
     ];
+    var map;
+    var layerTemplate = $('#layer-switcher ul').html();
+    $('#layer-switcher ul').empty();
+
+    var tileUrl = function(layer) {
+        return 'http://a.tiles.mapbox.com/v3/' + layer + '.jsonp'
+    };
 
     var layerInfo = [];
 
