@@ -52,6 +52,7 @@ body {
 
 h1 {
   font-size: 25px;
+  font-weight:900;
   padding: 10px 0;
   letter-spacing: -.05em;
   color: #999;
@@ -116,9 +117,8 @@ a {
   Layer switcher
 --------------------------------------------------------- */
 #layer-switcher li {
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #444;
   margin-bottom: -1px;
+  background-color: ##1f1f1f; 
 }
 #layer-switcher li a.title {
   font-size: 15px;
@@ -138,14 +138,9 @@ a {
   display: block;
   }
 #layer-switcher li.active {
-  background-color: #1f1f1f;
-  border-left: 1px solid #444;
+  background-color: #242424;
   padding-left: 10px;
   margin-left: -10px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
 }
 
 /* Reinvent green 'logo' */
@@ -153,9 +148,9 @@ a {
   position: absolute;
   top: 35px;
   right: 20px;
-  font-size: 25px;
-  font-style: italic;
-  font-family: Book Antiqua, serif;
+  font-size: 20px;
+  font-weight: 800;
+  font-family:  sans-serif;
 }
 
 /* Notes */
