@@ -149,6 +149,16 @@ a {
   border-bottom-left-radius: 5px;
 }
 
+/* Reinvent green 'logo' */
+#reinventgreen {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  font-size: 25px;
+  font-style: italic;
+  font-family: Book Antiqua, serif;
+}
+
 /* --------------------------------------------------------
   Wax, largely taken from theme/controls.css
 --------------------------------------------------------- */
