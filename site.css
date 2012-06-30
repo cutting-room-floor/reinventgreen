@@ -115,8 +115,8 @@ a {
   Layer switcher
 --------------------------------------------------------- */
 #layer-switcher li {
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
   margin-bottom: -1px;
 }
 #layer-switcher li a.title {
@@ -137,7 +137,7 @@ a {
   }
 #layer-switcher li.active {
   background-color: #1f1f1f;
-  border-left: 1px solid #666;
+  border-left: 1px solid #444;
   padding-left: 10px;
   margin-left: -10px;
   -moz-border-radius-topleft: 5px;
@@ -228,7 +228,7 @@ a.zoomer {
   width: 250px;
   z-index:999999;
   position:absolute;
-  background:#eee;
+  background:#fff;
   padding:10px;
   -webkit-user-select:auto;
   right:20px;
