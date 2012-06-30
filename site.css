@@ -137,7 +137,7 @@ a {
   display: block;
   }
 #layer-switcher li.active {
-  background-color: #2f2f2f;
+  background-color: #242424;
   padding-left: 10px;
   margin-left: -10px;
 }
