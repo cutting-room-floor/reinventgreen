@@ -47,7 +47,7 @@ body {
   background-color: #111;
   font-size: 15px;
   font-family: Helvetica, Arial, sans-serif;
-  color: #aaa;
+  color: #999;
 }
 
 h1 {
@@ -80,7 +80,7 @@ a {
   width:auto !important;
   height:auto !important;
   top:100px;
-  left:300px;
+  left:290px;
   right:0;
   bottom:0;
   background-color: #012;
@@ -99,7 +99,7 @@ a {
 #sidebar {
   position: absolute;
   width: 280px;
-  padding-left: 20px;
+  padding-left: 10px;
   top: 100px;
   left: 0;
   bottom: 0;
@@ -117,8 +117,11 @@ a {
   Layer switcher
 --------------------------------------------------------- */
 #layer-switcher li {
+  padding-left: 10px;
   margin-bottom: -1px;
-  background-color: ##1f1f1f; 
+  transition: background-color .5s;
+  -webkit-transition: background-color .5s;
+  -moz-transition: background-color .5s;
 }
 #layer-switcher li a.title {
   font-size: 15px;
@@ -126,11 +129,17 @@ a {
   padding: 10px 0;
   display: block;
   text-decoration: none;
-  color: #eee;
+  color: #333;
   }
+  #layer-switcher li:hover {
+    background-color: #191919;
+    }
+  #layer-switcher li.active a.title {
+    color: #eee;
+    }
 #layer-switcher li .description {
   display: none;
-  color: #aaa;
+  color: #999;
   padding: 10px 0;
   line-height: 20px;
   }
@@ -138,9 +147,7 @@ a {
   display: block;
   }
 #layer-switcher li.active {
-  background-color: #242424;
-  padding-left: 10px;
-  margin-left: -10px;
+  background-color: #222;
 }
 
 /* Reinvent green 'logo' */
@@ -157,12 +164,13 @@ a {
 #sidebar .notes {
   position: absolute;
   bottom: 20px;
+  left: 20px;
   font-size: 12px;
   line-height: 18px;
-  color: #444;
+  color: #333;
   }
   #sidebar .notes a {
-    color: #888;
+    color: #555;
   }
 
 /* --------------------------------------------------------
