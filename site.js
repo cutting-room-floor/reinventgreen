@@ -20,13 +20,14 @@ $(function() {
         return str.replace(/[^a-z,A-Z,0-0,-]/g, '-');
     };
 
+    // Build map, returns function to update map.
     var buildMap = function(tilejson) {
-        // Map
+        // Tile layer
         var map = new MM.Map('map',
         new wax.mm.connector(tilejson));
-        map.setCenterZoom(new MM.Location(tilejson.center[0],
-            tilejson.center[1]),
-            tilejson.center[2]);
+        map.setCenterZoom(new MM.Location(40.7010,
+            -74.0137),
+            11);
         wax.mm.zoomer(map).appendTo(map.parent);
 
         // Interaction

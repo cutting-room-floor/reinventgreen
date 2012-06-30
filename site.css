@@ -71,10 +71,11 @@ a {
   position:fixed !important;
   width:auto !important;
   height:auto !important;
-  top:0px;
+  top:90px;
   left:300px;
   right:0;
   bottom:0;
+  background-color: #000;
   }
 
 #header {
@@ -143,7 +144,7 @@ a.zoomer {
   text-align:center;
   width:30px;
   height:30px;
-  top: 105px;
+  top: 20px;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
   color: #333;
