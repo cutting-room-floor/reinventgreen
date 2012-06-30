@@ -1,0 +1,249 @@
+/* ------------------------------------------
+  Reset ♥
+  http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+  License: none (public domain)
+---------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+html, body, #map {width: 100%; height: 100%;}
+body { line-height: 1; }
+ol, ul { list-style: none;  }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+/* tables still need 'cellspacing='0'' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+:focus { outline: 0; }
+
+/* --------------------------------------------------------
+  Global styles
+--------------------------------------------------------- */
+
+body {
+  background-color: #111;
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #aaa;
+}
+
+h1 {
+  font-size: 25px;
+  padding: 10px 0;
+  letter-spacing: -.05em;
+  color: #999;
+  margin-bottom: 5px;
+  }
+  h1 .green-data {
+    color: #f5f5f5;
+    }
+
+p {
+  padding: 0 0 10px 0;
+  }
+
+a {
+  color: #f5f5f5;
+  text-decoration: none;
+  }
+
+/* --------------------------------------------------------
+  Layout
+--------------------------------------------------------- */
+
+#map {
+  position:fixed !important;
+  width:auto !important;
+  height:auto !important;
+  top:100px;
+  left:300px;
+  right:0;
+  bottom:0;
+  box-shadow:rgba(100, 100, 100, 0.1) -1px -1px 3px;
+  -moz-box-shadow:rgba(100, 100, 100, 0.1) -1px -1px 3px;
+  -webkit-box-shadow:rgba(100, 100, 100, 0.1) -1px -1px 3px;
+}
+
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  padding: 10px 20px;
+  z-index: 2;
+  }
+
+#sidebar {
+  position: absolute;
+  width: 280px;
+  padding-left: 20px;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  }
+
+#attribution {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 10px;
+  }
+
+/* --------------------------------------------------------
+  Layer switcher
+--------------------------------------------------------- */
+#layer-switcher li {
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  margin-bottom: -1px;
+}
+#layer-switcher li a.title {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 0;
+  display: block;
+  text-decoration: none;
+  color: #f5f5f5;
+  }
+#layer-switcher li .description {
+  display: none;
+  color: #aaa;
+  padding: 10px 0;
+  }
+#layer-switcher li.active .description {
+  display: block;
+  }
+#layer-switcher li.active {
+  background-color: #222;
+  border-left: 1px solid #666;
+  padding-left: 10px;
+  margin-left: -10px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+/* Reinvent green 'logo' */
+#reinventgreen {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  font-size: 25px;
+  font-style: italic;
+  font-family: Book Antiqua, serif;
+}
+
+/* --------------------------------------------------------
+  Wax, largely taken from theme/controls.css
+--------------------------------------------------------- */
+
+a.zoomer {
+  text-decoration:none;
+  position:absolute;
+  background-color:#fff;
+  line-height:30px;
+  font-size:20px;
+  z-index:99999;
+  text-align:center;
+  width:30px;
+  height:30px;
+  top: 20px;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  color: #333;
+  box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  }
+  a.zoomin {
+    left:20px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    -moz-border-bottom-left-radius: 3px;
+    }
+  a.zoomout {
+    left:50px;
+    border-left: 1px solid #ccc;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    -moz-border-bottom-right-radius: 3px;
+    }
+
+.wax-legends {
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  z-index:999999;
+  }
+
+.wax-legends .wax-legend {
+  padding:10px;
+  background:#fff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  }
+
+.wax-tooltip {
+  z-index:999999;
+  position:absolute;
+  background:#fff;
+  padding:10px;
+  -webkit-user-select:auto;
+  right:20px;
+  top:105px;
+  max-width:300px;
+  opacity:1;
+  -webkit-transition:opacity 150ms;
+  -moz-transition:opacity 150ms;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  }
+
+.wax-fade {
+  opacity:0;
+  transition: opacity .5s;
+  -moz-transition: opacity .5s; /* Firefox 4 */
+  -webkit-transition: opacity .5s; /* Safari and Chrome */
+  -o-transition: opacity .5s; /* Opera */
+  }
+
+  .wax-tooltip .close {
+    display:block;
+    position:absolute;
+    top:0px;
+    right:0px;
+    }
