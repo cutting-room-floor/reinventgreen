@@ -1,11 +1,26 @@
 $(function() {
     var layers = [
-        'villeda.map-ytpcaaur',
-        'lxbarth.map-s26z9vnz',
-        'villeda.map-8lrdm572',
-        'villeda.nyc-buildings',
-        'villeda.map-knrpf5da',
-        'villeda.map-iaqy28df'
+        {
+            handle: 'trees',
+            layer: 'villeda.trees-brooklyn,villeda.trees-bronx,villeda.trees-queens,villeda.trees-manhattan',
+            name: 'Street trees',
+            description: 'New York City street trees.'
+        }, {
+            handle: 'coolroofs',
+            layer: 'lxbarth.map-s26z9vnz'
+        }, {
+            handle: 'buildings',
+            layer: 'villeda.nyc-buildings'
+        }, {
+            handle: 'greenstreets',
+            layer: 'villeda.map-8lrdm572'
+        }, {
+            handle: 'school1',
+            layer: 'villeda.map-knrpf5da'
+        }, {
+            handle: 'school2',
+            layer: 'villeda.map-iaqy28df'
+        }
     ];
     var layerTemplate = $('#layer-switcher ul').html();
     $('#layer-switcher ul').empty();
@@ -14,10 +29,10 @@ $(function() {
         return 'http://a.tiles.mapbox.com/v3/' + layer + '.jsonp'
     };
 
-    var layerInfo = [];
+    var layerInfo = {};
 
     var cssSafe = function(str) {
-        return str.replace(/[^a-z,A-Z,0-0,-]/g, '-');
+        return str.replace(/[^a-zA-Z0-9]+/g, '');
     };
 
     // Build map, returns function to update map.
@@ -43,7 +58,7 @@ $(function() {
         var updateUI = function(tilejson) {
             $('#attribution').empty().append(tilejson.attribution);
             $('#layer-switcher li').removeClass('active');
-            $('#layer-switcher li#' + cssSafe(tilejson.id)).addClass('active');
+            $('#layer-switcher li#' + tilejson.handle).addClass('active');
         };
         updateUI(tilejson);
 
@@ -74,9 +89,14 @@ $(function() {
         var el = $('#layer-switcher ul')
             .append(layerTemplate)
             .find('li:last')
-            .attr('id', cssSafe(layer));
-        wax.tilejson(tileUrl(layer), function(tilejson) {
-            layerInfo.push(tilejson);
+            .attr('id', layer.handle);
+        wax.tilejson(tileUrl(layer.layer), function(tilejson) {
+            tilejson.handle = layer.handle;
+            tilejson.name = layer.name || tilejson.name;
+            tilejson.description = layer.description || tilejson.description;
+            tilejson.attribution = layer.attribution || tilejson.attribution;
+            layerInfo[layer.handle] = tilejson;
+
             $('.title', el).empty().append(tilejson.name);
             $('.description', el).empty().append(tilejson.description);
 
@@ -84,12 +104,7 @@ $(function() {
             if (i == 0) {
                 var updateMap = buildMap(tilejson);
                 $('#layer-switcher li .title').click(function() {
-                    var id = $(this).parent().attr('id');
-                    _.any(layerInfo, function(tilejson) {
-                        if (id != cssSafe(tilejson.id)) return false;
-                        updateMap(tilejson);
-                        return true;
-                    });
+                    updateMap(layerInfo[$(this).parent().attr('id')]);
                     return false;
                 });
             }
