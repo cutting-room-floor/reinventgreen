@@ -1,40 +1,4 @@
 $(function() {
-    var layers = [
-        {
-            handle: 'trees',
-            layer: 'villeda.trees-brooklyn,villeda.trees-bronx,villeda.trees-queens,villeda.trees-manhattan',
-            description: 'A census of street trees by borough yielded datasets with a total of 623,939 trees (<a href="https://nycopendata.socrata.com/browse?q=street%20tree%20census&sortBy=relevance">Source</a>). This map contains all boroughs except Staten Island.',
-            name: 'New York City street trees.'
-        }, {
-            handle: 'coolroofs',
-            layer: 'lxbarth.map-s26z9vnz',
-            name: 'Cool roof buildings',
-            description: 'There are over 200 cool roof buildings in New York City. This newly opened dataset identifies them by street address and geo location (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/NYC-Cool-Roofs-Buildings/uuxn-wzxe">Source</a>).'
-        }, {
-            handle: 'buildings',
-            layer: 'villeda.nyc-buildings',
-            name: 'Building perimeter outlines',
-            description: 'Rich dataset containing over one million building footprints of New York City, here colored by footprint area (<a href="https://nycopendata.socrata.com/Facilities-and-Structures/Building-Perimeter-Outlines/r7fd-yd5e">Source</a>)'
-        }, {
-            handle: 'greenstreets',
-            layer: 'villeda.map-8lrdm572',
-            name: 'Green streets',
-            description: 'Small planted areas that are maintained as <a href="http://www.nycgovparks.org/trees">Greenstreets</a> (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/Greenstreets/p23h-ci72">Source</a>).'
-        }, {
-            handle: 'school1',
-            layer: 'villeda.map-knrpf5da',
-            name: 'Elementary school zones',
-            description: '<a href="https://nycopendata.socrata.com/Education/School-Zones-2011-2012/dqkt-8x6u">Source</a>'
-        }, {
-            handle: 'school2',
-            layer: 'villeda.map-iaqy28df',
-            name: 'Middle school zones',
-            description: '<a href="https://nycopendata.socrata.com/Education/School-Zones-2011-2012/dqkt-8x6u">Source</a>'
-        }
-    ];
-    var layerTemplate = $('#layer-switcher ul').html();
-    $('#layer-switcher ul').empty();
-
     var tileUrl = function(layer) {
         return 'http://a.tiles.mapbox.com/v3/' + layer + '.jsonp'
     };
@@ -95,21 +59,10 @@ $(function() {
         };
     };
 
-    _.each(layers, function(layer, i){
-        var el = $('#layer-switcher ul')
-            .append(layerTemplate)
-            .find('li:last')
-            .attr('id', layer.handle);
-        wax.tilejson(tileUrl(layer.layer), function(tilejson) {
-            tilejson.handle = layer.handle;
-            tilejson.name = layer.name || tilejson.name;
-            tilejson.description = layer.description || tilejson.description;
-            tilejson.attribution = layer.attribution || tilejson.attribution;
-            layerInfo[layer.handle] = tilejson;
-
-            $('.title', el).empty().append(tilejson.name);
-            $('.description', el).empty().append(tilejson.description);
-
+    $('#layer-switcher li').each(function(i, el) {
+        wax.tilejson(tileUrl($('a', el).attr('data-layer')), function(tilejson) {
+            tilejson.handle = $(el).attr('id');
+            layerInfo[tilejson.handle] = tilejson;
             // Load the first map and attach event handlers.
             if (i == 0) {
                 var updateMap = buildMap(tilejson);
