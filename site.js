@@ -71,7 +71,7 @@ $(function() {
                     var id = $(this).parent().attr('id');
                     updateMap(layers[id]);
                     $('.share .tilejson textarea').empty().text(url(id));
-                    $('.share .embed textarea').empty().text(url(id));
+                    $('.share .embed textarea').empty().text("<iframe width='500' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/" + id + ".html'></iframe>");
                     return false;
                 });
             }
