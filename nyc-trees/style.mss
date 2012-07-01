@@ -1,12 +1,13 @@
 // Map{ background-color: #012;}
 
-#staten {
+
+#manhattan {
   marker-width:.5;
-	[DIAMETER <= 5]{marker-fill:#07f;}
-	[DIAMETER <= 10][DIAMETER >5]{marker-fill:#3cbc7e;}
-	[DIAMETER <= 15][DIAMETER >10]{marker-fill:#7f0;}
-	[DIAMETER <= 20][DIAMETER >15]{marker-fill:#bcff00;}
-	[DIAMETER > 20]{marker-fill:#ff0;}
+	[diameter <= 5]{marker-fill:#07f;}
+	[diameter <= 10][diameter >5]{marker-fill:#3cbc7e;}
+	[diameter <= 15][diameter >10]{marker-fill:#7f0;}
+	[diameter <= 20][diameter >15]{marker-fill:#bcff00;}
+	[diameter > 20]{marker-fill:#ff0;}
   marker-opacity:.1;
   marker-line-width:0;
   marker-allow-overlap:true; 
