@@ -172,6 +172,22 @@ a {
   #sidebar .notes a {
     color: #555;
   }
+#sidebar .notes #more-data a {
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  padding: 5px;
+  background-color: #222;
+  color: #bbb;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  margin: 0 20px 20px 0;
+  text-align: center;
+  }
+  #sidebar .notes #more-data a:hover {
+    background-color: #333;
+    color: #fff;
+    }
 
 /* --------------------------------------------------------
   Wax, largely taken from theme/controls.css
