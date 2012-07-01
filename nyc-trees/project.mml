@@ -13,7 +13,7 @@
   "format": "png",
   "interactivity": {
     "layer": "staten",
-    "template_teaser": "<b>Tree ID:</b> {{{TREEID}}} <br />\n<b>Address:</b> {{{BUILDINGNU}}} {{{BUILDINGST}}} <br />\n<b>Diameter (DBH):</b> {{{DIAMETER}}} <br />\n<b>Borough:</b> {{{BOROUGH}}}nd ",
+    "template_teaser": "<b>Tree ID:</b> {{{treeid}}} <br />\n<b>Address:</b> {{{buildingnu}}} {{{buildingst}}} <br />\n<b>Diameter (DBH):</b> {{{diameter}}} <br />\n<b>Borough:</b> {{{borough}}}nd ",
     "fields": [
       "treeid",
       "buildingnu",
@@ -111,20 +111,6 @@
       "srs-name": "900913",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "brooklyn"
-    },
-    {
-      "geometry": "point",
-      "id": "staten",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/ianvilleda/Downloads/DPR_StatenIslandStreetTrees (1)/StatenIslandTree.shp",
-        "id": "staten",
-        "project": "trees-manhattan",
-        "srs": null
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "name": "staten"
     }
   ],
   "name": "",
