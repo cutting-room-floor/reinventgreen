@@ -1,17 +1,10 @@
 $(function() {
-    var tileUrl = function(layer) {
-        return 'http://a.tiles.mapbox.com/v3/' + layer + '.jsonp'
-    };
-
-    var layerInfo = {};
-
-    var cssSafe = function(str) {
-        return str.replace(/[^a-zA-Z0-9]+/g, '');
-    };
+    // Holds tilejson hashes for all layers.
+    var layers = {};
 
     // Build map, returns function to update map.
     var buildMap = function(tilejson) {
-        // Tile layer
+        // Tile layer, position on New York City
         var map = new MM.Map('map',
         new wax.mm.connector(tilejson));
         map.setCenterZoom(new MM.Location(40.7010,
@@ -59,20 +52,22 @@ $(function() {
         };
     };
 
+    // Set up layerswitcher.
     $('#layer-switcher li').each(function(i, el) {
-        wax.tilejson(tileUrl($('a', el).attr('data-layer')), function(tilejson) {
+        var url = 'http://a.tiles.mapbox.com/v3/' +
+            $('a', el).attr('data-layer') + '.jsonp';
+        wax.tilejson(url, function(tilejson) {
             tilejson.handle = $(el).attr('id');
-            layerInfo[tilejson.handle] = tilejson;
-            // Load the first map and attach event handlers.
+            layers[tilejson.handle] = tilejson;
+            // As soon as first map is loaded, build it and
+            // attach updateMap handler to all layer controls.
             if (i == 0) {
                 var updateMap = buildMap(tilejson);
                 $('#layer-switcher li .title').click(function() {
-                    updateMap(layerInfo[$(this).parent().attr('id')]);
+                    updateMap(layers[$(this).parent().attr('id')]);
                     return false;
                 });
             }
         });
     });
-
-    
 });

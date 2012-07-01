@@ -1,9 +1,9 @@
 {
   "bounds": [
-    -74.052,
-    40.5597,
+    -74.0355,
+    40.5592,
     -73.6977,
-    40.9239
+    40.9244
   ],
   "center": [
     -73.8618,
@@ -19,7 +19,7 @@
       "sqft"
     ]
   },
-  "minzoom": 0,
+  "minzoom": 3,
   "maxzoom": 17,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
@@ -31,7 +31,10 @@
       "id": "coolroofs",
       "class": "",
       "Datasource": {
-        "file": "data/coolroofs.csv"
+        "file": "data/coolroofs.csv",
+        "id": "coolroofs",
+        "project": "coolroofs",
+        "srs": null
       },
       "srs-name": "autodetect",
       "srs": "",
@@ -39,7 +42,7 @@
     }
   ],
   "name": "New York City Cool Roof Buildings",
-  "description": "June 29, 2012\n\nSource: https://nycopendata.socrata.com/Environmental-Sustainability/NYC-Cool-Roofs-Buildings/uuxn-wzxe",
+  "description": "July 1, 2012\n\nSource: https://nycopendata.socrata.com/Environmental-Sustainability/NYC-Cool-Roofs-Buildings/uuxn-wzxe",
   "legend": "",
   "attribution": ""
 }
