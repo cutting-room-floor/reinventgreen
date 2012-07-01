@@ -66,12 +66,12 @@ $(function() {
             if (i == 0) {
                 var updateMap = buildMap(tilejson);
                 $('.share .tilejson textarea').text(url(id));
-                $('.share .embed textarea').text("<iframe width='500' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/" + id + ".html'></iframe>");
+                $('.share .embed textarea').text("<iframe style='background-color: #000' width='500' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/" + id + ".html#11,40.7010,-74.0137'></iframe>");
                 $('#layer-switcher li .title').click(function() {;
                     var id = $(this).parent().attr('id');
                     updateMap(layers[id]);
                     $('.share .tilejson textarea').empty().text(url(id));
-                    $('.share .embed textarea').empty().text("<iframe width='500' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/" + id + ".html'></iframe>");
+                    $('.share .embed textarea').empty().text("<iframe style='background-color: #000' width='500' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/" + id + ".html#11,40.7010,-74.0137'></iframe>");
                     return false;
                 });
             }
