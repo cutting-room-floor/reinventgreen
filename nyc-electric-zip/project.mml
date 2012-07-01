@@ -40,7 +40,7 @@
       "geometry": "polygon",
       "Datasource": {
         "type": "sqlite",
-        "file": "/Users/ab/apps/reinventgreen/nyc-electric-zip/nycelectric.sqlite",
+        "file": "nycelectric.sqlite",
         "table": "(SELECT *, cast(kwh as INT) as kwhint FROM nycelectric) as data",
         "attachdb": "",
         "extent": ""
