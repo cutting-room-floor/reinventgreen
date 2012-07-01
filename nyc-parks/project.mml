@@ -1,19 +1,25 @@
 {
   "bounds": [
-    -180,
-    -85.05112877980659,
-    180,
-    85.05112877980659
+    -74.2964,
+    40.4678,
+    -73.7183,
+    40.9291
   ],
   "center": [
-    0,
-    0,
-    2
+    -73.9799,
+    40.7009,
+    11
   ],
   "format": "png",
-  "interactivity": false,
-  "minzoom": 0,
-  "maxzoom": 22,
+  "interactivity": {
+    "layer": "nycparks",
+    "template_teaser": "{{{SIGNNAME}}}",
+    "fields": [
+      "SIGNNAME"
+    ]
+  },
+  "minzoom": 9,
+  "maxzoom": 17,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
     "style.mss"
@@ -28,8 +34,24 @@
         "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
         "type": "shape"
       }
+    },
+    {
+      "geometry": "polygon",
+      "id": "nycparks",
+      "class": "",
+      "Datasource": {
+        "file": "nycparks/nycparks.shp",
+        "id": "nycparks",
+        "project": "nyc-parks",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "nycparks"
     }
   ],
-  "name": "NYC Parks",
-  "description": ""
+  "name": "New York City Parks",
+  "description": "Map of Parks https://nycopendata.socrata.com/Facilities-and-Structures/Map-of-Parks/jc79-4imn",
+  "legend": "",
+  "attribution": "New York City Open Data"
 }
