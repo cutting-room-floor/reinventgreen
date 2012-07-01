@@ -55,7 +55,25 @@
       All data from <a href='https://nycopendata.socrata.com/'>NYC Open Data portal</a> and <a href='http://openstreetmap.org'>OpenStreetMap</a>. Maps rendered with <a href='http://mapbox.com/tilemill/'>TileMill</a> and hosted on <a href='http://mapbox.com/plans/'>MapBox</a>. All site and TileMill map sources <a href='https://github.com/mapbox/reinventgreen'>available on GitHub</a>.
       </div>
     </div>
-    <div id='map' class='fullscreen'></div>
+    <div id='map' class='fullscreen'>
+      <div id ='share'>
+        <a href='#' class='share button'>Share</a>
+    </div>
+    <div class='modal share'>
+    <a href='#' class='close button'>x</a>
+      <h2>Share</h2>
+      <div class='tilejson'>
+      <textarea></textarea>
+      <h3>TileJSON URL</h3>
+      Use with a TileJSON <a href='http://mapbox.com/wax/'>Wax</a> connector or the <a href='http://mapbox.com/mobile/'>MapBox iOS SDK</a>.
+      </div>
+      <div class='embed'>
+      <textarea></textarea>
+      <h3>Embed code</h3>
+      Copy and paste this HTML into your website or blog to show this map.
+      </div>
+    </div>
+  </div>
     <div id='attribution'></div>
     </div>
   </body>
