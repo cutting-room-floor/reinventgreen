@@ -189,6 +189,86 @@ a {
     color: #fff;
     }
 
+#share {
+  background-color: #333;
+  top: 43px;
+  left: 20px;
+  padding-top: 10px;
+  position: absolute;
+  z-index: 100;
+  width: 63px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  }
+  #share a {
+    color: #999;
+  }
+
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .7);
+  display: none;
+  z-index: 1000000;
+  }
+.modal-box {
+  width: 500px;
+  height: 200px;
+  background-color: #fff;
+  position: absolute;
+  margin-left: -260px;
+  margin-top: -90px;
+  top: 50%;
+  left: 50%;
+  color: #333;
+  padding: 20px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  }
+  .modal h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    }
+  .modal .tilejson {
+    width: 230px;
+    float: right;
+    }
+  .modal .embed {
+    width: 230px;
+    float: left;
+    }
+  .modal textarea {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 50px; 
+  }
+  .modal a {
+    color: #489;
+    }
+  .modal h3 {
+    font-weight: bold;
+    margin-top: 10px;
+    }
+  .modal .close {
+    font-weight: bold;
+    display: block;
+    float: right;
+    width: 25px;
+    line-height: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+  }
+
 /* --------------------------------------------------------
   Wax, largely taken from theme/controls.css
 --------------------------------------------------------- */
@@ -210,6 +290,7 @@ a.zoomer {
   box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  z-index: 200;
   }
   a.zoomin {
     left:20px;

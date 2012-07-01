@@ -54,20 +54,35 @@ $(function() {
 
     // Set up layerswitcher.
     $('#layer-switcher li').each(function(i, el) {
-        var url = 'http://a.tiles.mapbox.com/v3/' +
-            $('a', el).attr('data-layer') + '.jsonp';
-        wax.tilejson(url, function(tilejson) {
+        var url = function(id) {
+            return 'http://a.tiles.mapbox.com/v3/' + id + '.jsonp';
+        }
+        var id = $('a', el).attr('data-layer');
+        wax.tilejson(url(id), function(tilejson) {
             tilejson.handle = $(el).attr('id');
             layers[tilejson.handle] = tilejson;
             // As soon as first map is loaded, build it and
             // attach updateMap handler to all layer controls.
             if (i == 0) {
                 var updateMap = buildMap(tilejson);
-                $('#layer-switcher li .title').click(function() {
-                    updateMap(layers[$(this).parent().attr('id')]);
+                $('.share .tilejson textarea').text(url(id));
+                $('.share .embed textarea').text("<iframe width='500' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/" + id + ".html'></iframe>");
+                $('#layer-switcher li .title').click(function() {;
+                    var id = $(this).parent().attr('id');
+                    updateMap(layers[id]);
+                    $('.share .tilejson textarea').empty().text(url(id));
+                    $('.share .embed textarea').empty().text("<iframe width='500' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/" + id + ".html'></iframe>");
                     return false;
                 });
             }
         });
+    });
+
+    // Map sharing.
+    $('#share a').click(function() {
+        $('.modal.share').stop().fadeIn(100);
+    });
+    $('.modal .close').click(function() {
+        $('.modal').stop().fadeOut(100);
     });
 });
