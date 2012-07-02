@@ -2,9 +2,9 @@
 #nycelectric {
   [kwhint > 0] { 
     polygon-opacity:.5;
-    polygon-fill:#41d6f5;
+    polygon-fill:#ff0000;
   }
-  [kwhint > 10000] {polygon-fill:#38a6ef;}
+  [kwhint > 10000] {polygon-fill:#999999;}
   [kwhint > 50000] {polygon-fill:#3080e8;}
   [kwhint > 100000] {polygon-fill:#2842e2;}
   [kwhint > 500000] {polygon-fill:#3a20db;}
