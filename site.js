@@ -57,7 +57,7 @@ $(function() {
         };
     };
 
-    // Set up layerswitcher.
+    // Set up map and layerswitcher.
     $('#layer-switcher li').each(function(i, el) {
         wax.tilejson(tileUrl($('a', el).attr('data-layer')), function(tilejson) {
             tilejson.handle = $(el).attr('id');
