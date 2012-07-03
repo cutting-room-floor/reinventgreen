@@ -29,7 +29,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
   }
-html, body, #map {width: 100%; height: 100%;}
 body { line-height: 1; }
 ol, ul { list-style: none;  }
 blockquote, q { quotes: none; }
@@ -42,71 +41,67 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* --------------------------------------------------------
   Global styles
 --------------------------------------------------------- */
-
 body {
-  background-color: #111;
-  font-size: 15px;
-  line-height: 20px;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #999;
-}
+  background: #111;
+  font: 15px/20px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #7a7a7a;
+   -webkit-font-smoothing: antialiased;
+  }
 
 h1 {
   font-size: 25px;
-  font-weight:900;
-  padding: 10px 0;
-  letter-spacing: -.05em;
+  font-weight: 900;
   color: #999;
+  text-shadow: 0 -1px 0 #000;
   margin-bottom: 5px;
   }
-  h1 .green-data {
-    color: #eee;
-    }
-
 p {
   padding: 0 0 10px 0;
   }
-
 a {
-  color: #eee;
+  color: #6BAD5E;
   text-decoration: none;
   }
+  a:hover {
+    color: #94c48b;
+    }
 
 /* --------------------------------------------------------
-  Layout
+  Layout + Main component styling
 --------------------------------------------------------- */
-
 #map {
-  position:fixed !important;
-  width:auto !important;
-  height:auto !important;
-  top:100px;
-  left:290px;
-  right:0;
-  bottom:0;
   background-color: #000;
-}
-
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: 0;
+  }
 #header {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  padding: 10px 20px;
-  z-index: 2;
+  width: 100%;
+  top: 0; left: 0;
+  height: 79px;
+  border-bottom: 1px solid #000;
+  -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 5000;
   }
-
+  #header .inner {
+    padding: 0 10px;
+    }
 #sidebar {
+  background: #303030;
   position: absolute;
   width: 280px;
-  padding-left: 10px;
-  top: 100px;
+  height: 100%;
+  top: 0;
   left: 0;
-  bottom: 0;
-  z-index: 1;
+  z-index: 100;
   }
-
+  #sidebar .inner {
+    padding-top: 120px;
+    }
 #attribution {
   position: absolute;
   right: 20px;
@@ -114,97 +109,156 @@ a {
   font-size: 10px;
   }
 
+#layer-switcher li.active,
+.gradient {
+  background-color: #202020;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#303030), to(#202020));
+  background-image: -webkit-linear-gradient(top, #303030, #202020);
+  background-image:    -moz-linear-gradient(top, #303030, #202020);
+  background-image:      -o-linear-gradient(top, #303030, #202020);
+  background-image:         linear-gradient(to bottom, #303030, #202020);  
+  }
+
+/* --------------------------------------------------------
+  Header Styling
+--------------------------------------------------------- */
+h1#title {
+  background: transparent url(images/sprite.png) no-repeat 0 0;
+  display: block;
+  float: left;
+  height: 25px;
+  width: 75px;
+  text-indent: -999em;
+  margin: 15px 10px 5px 0;
+  padding: 0;
+  }
+  .green-data {
+    float: left;
+    margin: 22px 0 0;
+    font-size: 20px;
+    color: #fff;
+    }
+
+h6.description {
+  clear: both;
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  }
+  h6.description a {
+    color: #797979;
+    font-weight: bold;
+    }
+    h6.description a:hover {
+      color: #fff;
+      }
+
+.reinventgreen {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  }
+
 /* --------------------------------------------------------
   Layer switcher
 --------------------------------------------------------- */
 #layer-switcher li {
+  position: relative;
   padding-left: 10px;
-  margin-bottom: -1px;
-  transition: background-color .5s;
-  -webkit-transition: background-color .5s;
-  -moz-transition: background-color .5s;
-}
-#layer-switcher li a.title {
-  font-size: 15px;
-  font-weight: bold;
-  padding: 10px 0;
-  display: block;
-  text-decoration: none;
-  color: #333;
+  border-bottom: 1px solid #101010;
   }
+  #layer-switcher li:first-child {
+    border-top: 1px solid #101010;
+    }
+  #layer-switcher li a.title {
+    font-weight: bold;
+    padding: 10px 0;
+    display: block;
+    text-decoration: none;
+    }
   #layer-switcher li:hover {
-    background-color: #191919;
+    background-color: #292929;
     }
   #layer-switcher li.active a.title {
     color: #eee;
     }
-#layer-switcher li .description {
-  display: none;
-  color: #999;
-  padding: 10px 0;
-  }
-#layer-switcher li.active .description {
-  display: block;
-  }
-#layer-switcher li.active {
-  background-color: #222;
-}
-
-/* Reinvent green 'logo' */
-#reinventgreen {
-  position: absolute;
-  top: 35px;
-  right: 20px;
-  font-size: 20px;
-  font-weight: 800;
-  font-family:  sans-serif;
-}
+  #layer-switcher li .description {
+    background: #fff;
+    color: #404040;
+    display: none;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    font-size: 13px;
+    line-height: 18px;
+    left: 280px;
+    width: 140px;
+    -moz-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    }
+    #layer-switcher .arrow {
+      position: absolute;
+      left: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid #fff;
+      border-bottom: 10px solid transparent;
+      }
+  #layer-switcher li.active .description { display: block; }
 
 /* Notes */
 #sidebar .notes {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-size: 12px;
+  background: #303030;
+  font-size: 11px;
   line-height: 18px;
-  color: #333;
+  color: #656565;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
   }
   #sidebar .notes a {
-    color: #555;
-  }
-#sidebar .notes #more-data a {
+    color: #999;
+    font-weight: 500;
+    }
+
+#sidebar #more-data a {
   font-size: 15px;
   font-weight: bold;
   display: block;
-  padding: 5px;
-  background-color: #222;
-  color: #bbb;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  margin: 0 20px 20px 0;
+  padding: 10px;
+  background-color: #585858;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin: 15px 0;
   text-align: center;
+  color: #fff;
   }
-  #sidebar .notes #more-data a:hover {
-    background-color: #333;
-    color: #fff;
+  #sidebar #more-data a:hover {
+    background-color: #505050;
     }
 
 #share {
-  background-color: #333;
-  top: 43px;
-  left: 20px;
-  padding-top: 10px;
+  background: #303030;
+  top: 130px;
+  right: 20px;
   position: absolute;
   z-index: 100;
-  width: 63px;
+  width: 60px;
   text-align: center;
-  font-size: 12px;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
+  font-size: 13px;
+  -moz-border-radius: 0 0 2px 2px;
+  border-radius: 0 0 2px 2px;
+  font-weight: bold;
+  line-height: 30px;
+  height: 30px;
+  border-top: 1px solid #000;
   }
   #share a {
-    color: #999;
-  }
+    color: #fff;
+    }
 
 .modal {
   position: absolute;
@@ -227,8 +281,8 @@ a {
   left: 50%;
   color: #333;
   padding: 20px;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   }
   .modal h2 {
     font-size: 20px;
@@ -246,8 +300,8 @@ a {
   .modal textarea {
     border: 1px solid #ddd;
     width: 100%;
-    height: 50px; 
-  }
+    height: 50px;
+    }
   .modal a {
     color: #489;
     }
@@ -265,47 +319,37 @@ a {
     text-align: center;
     background-color: #333;
     color: #fff;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-  }
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    }
 
 /* --------------------------------------------------------
   Wax, largely taken from theme/controls.css
 --------------------------------------------------------- */
-
 a.zoomer {
-  text-decoration:none;
-  position:absolute;
-  background-color:#fff;
-  line-height:30px;
-  font-size:20px;
-  z-index:99999;
-  text-align:center;
-  width:30px;
-  height:30px;
-  top: 20px;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  color: #333;
-  box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
-  -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
-  -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  text-decoration: none;
+  position: absolute;
+  background-color: #404040;
+  line-height: 30px;
+  font-size: 20px;
+  z-index: 1000;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  top: 100px;
+  color: #fff;
   z-index: 200;
   }
   a.zoomin {
-    left:20px;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    -moz-border-top-left-radius: 3px;
-    -moz-border-bottom-left-radius: 3px;
+    right: 50px;
+    -moz-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
     }
   a.zoomout {
-    left:50px;
-    border-left: 1px solid #ccc;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    -moz-border-top-right-radius: 3px;
-    -moz-border-bottom-right-radius: 3px;
+    right: 20px;
+    border-left: 1px solid #000;
+    -moz-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
     }
 
 .wax-legends {
@@ -314,49 +358,44 @@ a.zoomer {
   bottom:20px;
   z-index:999999;
   }
-
 .wax-legends .wax-legend {
   padding:10px;
   background:#fff;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   }
-
 .wax-tooltip {
-  color: #333;
   width: 250px;
-  z-index:999999;
+  z-index: 1000;
   position:absolute;
   background:#fff;
-  padding:10px;
+  color: #404040;
+  padding: 10px;
   -webkit-user-select:auto;
-  right:20px;
-  top:20px;
-  max-width:300px;
+  right: 20px;
+  top: 100px;
+  max-width: 300px;
   opacity:1;
   -webkit-transition:opacity 150ms;
   -moz-transition:opacity 150ms;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
   }
-
-.wax-fade {
-  opacity:0;
-  transition: opacity .5s;
-  -moz-transition: opacity .5s; /* Firefox 4 */
-  -webkit-transition: opacity .5s; /* Safari and Chrome */
-  -o-transition: opacity .5s; /* Opera */
+.wax-fade { opacity:0; }
+.wax-tooltip b {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
   }
-
-  .wax-tooltip .close {
-    display:block;
-    position:absolute;
-    top:0px;
-    right:0px;
-    }
+.wax-tooltip .close {
+  display:block;
+  position:absolute;
+  top:0;
+  right:0;
+  }

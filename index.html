@@ -14,45 +14,49 @@
     <script src='site.js'></script>
   </head>
   <body>
-    <div id='header'>
-      <div id='reinventgreen'><a href='http://hackerleague.org/hackathons/reinvent-green'>#reinventgreen</a></div>
-      <h1 id='title'>New York City <span class='green-data'>Green Data</span></h1>
-      <div id='description'>Showcase of <a href='https://nycopendata.socrata.com/'>NYC open data</a> for <a href='http://hackerleague.org/hackathons/reinvent-green'>#reinventgreen</a>, June 2012.</div>
+    <div id='header' class='gradient'>
+      <div class='inner'>
+        <h1 id='title'>New York City</h1><span class='green-data'>Green Data</span>
+        <h6 class='description'>A showcase of <a href='https://nycopendata.socrata.com/'>NYC open data</a> for <a href='http://hackerleague.org/hackathons/reinvent-green'>#reinventgreen</a>, June 2012.</h6>
+        <a class='reinventgreen' href='http://hackerleague.org/hackathons/reinvent-green'>#reinventgreen</a>
+      </div>
     </div>
     <div id='sidebar'>
-      <div id='layer-switcher'>
-        <ul>
-          <li id='street-trees'>
-            <a class='title' data-layer='villeda.trees-staten,villeda.trees-brooklyn,villeda.trees-bronx,villeda.trees-queens,villeda.trees-manhattan' href='#'>Street trees</a>
-            <div class='description'>A census of street trees by borough yielded datasets with a total of 623,939 trees (<a href="https://nycopendata.socrata.com/browse?q=street%20tree%20census&sortBy=relevance">Source</a>).</div>
-          </li>
-          <li id='parks'>
-            <a class='title' data-layer='lxbarth.map-e1zsyom9' href='#'>Parks</a>
-            <div class='description'>New York City Department of Parks &amp; Recreation parks (<a href="https://nycopendata.socrata.com/Facilities-and-Structures/Map-of-Parks/jc79-4imn/about">Source</a>).</div>
-          </li>
-          <li id='cool-roofs'>
-            <a class='title' data-layer='lxbarth.map-wpqmws96' href='#'>Cool roof buildings</a>
-            <div class='description'>There are over 200 cool roof buildings with a total surface of over a million square feet in New York City. This newly opened dataset identifies them by street address and geo location (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/NYC-Cool-Roofs-Buildings/uuxn-wzxe">Source</a>).</div>
-          </li>
-          <li id='energy'>
-            <a class='title' data-layer='lxbarth.map-v9o1vc83' href='#'>Energy consumption</a>
-            <div class='description'>Energy consumption by ZIP code in kWh. Blue is lower consumption, magenta higher consumption (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/Electric-Consumption-by-ZIP-Code-2010/74cu-ncm4">Source</a>)</div>
-          </li>
-          <li id='buildings-footprints'>
-            <a class='title' data-layer='villeda.nyc-buildings' href='#'>Building perimeter outlines</a>
-            <div class='description'>Rich dataset containing over one million building footprints of New York City, here colored by footprint area (<a href="https://nycopendata.socrata.com/Facilities-and-Structures/Building-Perimeter-Outlines/r7fd-yd5e">Source</a>)</div>
-          </li>
-          <li id='greenstreets'>
-            <a class='title' data-layer='villeda.map-8lrdm572' href='#'>Green streets</a>
-            <div class='description'>Small planted areas that are maintained as <a href="http://www.nycgovparks.org/trees">Greenstreets</a> (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/Greenstreets/p23h-ci72">Source</a>).</div>
-          </li>
-        </ul>
-      </div>
-      <div class='notes'>
-        <div id='more-data'>
-          <a href='https://nycopendata.socrata.com/'>More data</a>
+      <div class='inner'>
+        <div id='layer-switcher'>
+          <ul>
+            <li id='street-trees'>
+              <a class='title' data-layer='villeda.trees-staten,villeda.trees-brooklyn,villeda.trees-bronx,villeda.trees-queens,villeda.trees-manhattan' href='#'>Street trees</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>A census of street trees by borough yielded datasets with a total of 623,939 trees (<a href="https://nycopendata.socrata.com/browse?q=street%20tree%20census&amp;sortBy=relevance">Source</a>).</div>
+            </li>
+            <li id='parks'>
+              <a class='title' data-layer='lxbarth.map-e1zsyom9' href='#'>Parks</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>New York City Department of Parks &amp; Recreation parks (<a href="https://nycopendata.socrata.com/Facilities-and-Structures/Map-of-Parks/jc79-4imn/about">Source</a>).</div>
+            </li>
+            <li id='cool-roofs'>
+              <a class='title' data-layer='lxbarth.map-wpqmws96' href='#'>Cool roof buildings</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>There are over 200 cool roof buildings with a total surface of over a million square feet in New York City. This newly opened dataset identifies them by street address and geo location (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/NYC-Cool-Roofs-Buildings/uuxn-wzxe">Source</a>).</div>
+            </li>
+            <li id='energy'>
+              <a class='title' data-layer='lxbarth.map-v9o1vc83' href='#'>Energy consumption</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>Energy consumption by ZIP code in kWh. Blue is lower consumption, magenta higher consumption (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/Electric-Consumption-by-ZIP-Code-2010/74cu-ncm4">Source</a>)</div>
+            </li>
+            <li id='buildings-footprints'>
+              <a class='title' data-layer='villeda.nyc-buildings' href='#'>Building perimeter outlines</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>Rich dataset containing over one million building footprints of New York City, here colored by footprint area (<a href="https://nycopendata.socrata.com/Facilities-and-Structures/Building-Perimeter-Outlines/r7fd-yd5e">Source</a>)</div>
+            </li>
+            <li id='greenstreets'>
+              <a class='title' data-layer='villeda.map-8lrdm572' href='#'>Green streets</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>Small planted areas that are maintained as <a href="http://www.nycgovparks.org/trees">Greenstreets</a> (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/Greenstreets/p23h-ci72">Source</a>).</div>
+            </li>
+          </ul>
         </div>
-      All data from <a href='https://nycopendata.socrata.com/'>NYC Open Data portal</a> and <a href='http://openstreetmap.org'>OpenStreetMap</a>. Maps rendered with <a href='http://mapbox.com/tilemill/'>TileMill</a> and hosted on <a href='http://mapbox.com/plans/'>MapBox</a>. All site and TileMill map sources <a href='https://github.com/mapbox/reinventgreen'>available on GitHub</a>.
+        <div class='notes'>
+          <div id='more-data'>
+            <a href='https://nycopendata.socrata.com/' title='More from the NYC OpenData Catalog'>Explore Data Catalog</a>
+          </div>
+        All data from <a href='https://nycopendata.socrata.com/'>NYC Open Data portal</a> and <a href='http://openstreetmap.org'>OpenStreetMap</a>. Maps rendered with <a href='http://mapbox.com/tilemill/'>TileMill</a> and hosted on <a href='http://mapbox.com/plans/'>MapBox</a>. All site and TileMill map sources <a href='https://github.com/mapbox/reinventgreen'>available on GitHub</a>.
+        </div>
       </div>
     </div>
     <div id='map' class='fullscreen'>
@@ -76,8 +80,6 @@
         </div>
       </div>
     </div>
-  </div>
     <div id='attribution'></div>
-    </div>
   </body>
 </html>
