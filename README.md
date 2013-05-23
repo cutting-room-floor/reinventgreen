@@ -58,4 +58,3 @@ NOTE: This layer can generate both middle and elementary school zone maps. To to
   polygon-fill:#007FFF;
 }
 ``` 
-
